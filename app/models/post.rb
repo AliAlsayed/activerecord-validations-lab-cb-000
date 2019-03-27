@@ -6,6 +6,8 @@ class Post < ActiveRecord::Base
   validate :clickbaity?
 
   def clickbaity?
-    title.include?("Won't Believe") || title.include?("Top [number]") || title.include?("Guess")
+    if !(title.include?("Won't Believe") || title.include?("Top [number]") || title.include?("Guess"))
+      errors.add(:title, "That's wont do it")
+    end
   end
 end
