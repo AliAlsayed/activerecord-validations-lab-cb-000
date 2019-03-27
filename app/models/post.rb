@@ -6,5 +6,5 @@ class Post < ActiveRecord::Base
 
   def clickbaity?
     title.include?("Won't Believe")
-  end 
+  end
 end
